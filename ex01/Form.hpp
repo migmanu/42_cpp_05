@@ -48,6 +48,6 @@ class Form
 		bool _signed;
 };
 
-std::ostream &operator<<(std::ostream &o, const Bureaucrat &rhs);
+std::ostream &operator<<(std::ostream &o, const Form &rhs);
 
 #endif // !Form_HPP

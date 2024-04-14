@@ -1,4 +1,5 @@
 #ifndef Bureaucrat_HPP
+#define Bureaucrat_HPP
 #include <exception>
 #include <iostream>
 #include <ostream>

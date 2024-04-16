@@ -12,11 +12,11 @@ AForm::AForm(std::string name, int signGrade, int execGrade)
 	std::cout << "AForm " << this->_name << " parameterized constructor called" << std::endl;
 	if (_reqSignGrade < 1 || _reqExecGrade < 1)
 	{
-		throw AForm::GradeToHighException();
+		throw AForm::GradeTooHighException();
 	}
 	if (_reqSignGrade > 150 || _reqExecGrade > 150)
 	{
-		throw AForm::GradeToLowException();
+		throw AForm::GradeTooLowException();
 	}
 	return;
 }
@@ -59,7 +59,7 @@ void AForm::beSigned(const Bureaucrat &agent)
 {
 	if (agent.getGrade() > this->_reqSignGrade)
 	{
-		throw AForm::GradeToLowException();
+		throw AForm::GradeTooLowException();
 	}
 	if (this->_signed == true)
 	{

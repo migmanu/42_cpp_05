@@ -25,7 +25,7 @@ class AForm
 	void execute(Bureaucrat const &executor);
 
 	// Exception classes
-	class GradeToHighException : public std::exception
+	class GradeTooHighException : public std::exception
 	{
 	  public:
 		virtual const char *what() const throw()
@@ -33,7 +33,7 @@ class AForm
 			return "Grade too high";
 		}
 	};
-	class GradeToLowException : public std::exception
+	class GradeTooLowException : public std::exception
 	{
 	  public:
 		virtual const char *what() const throw()

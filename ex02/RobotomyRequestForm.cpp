@@ -1,5 +1,6 @@
 #include "RobotomyRequestForm.hpp"
-#include "AForm.hpp"
+#include <cstdlib>
+#include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", 72, 45), _target("No target")
 {
@@ -9,20 +10,20 @@ RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", 72
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
-	std::cout << "RobotomyRequestForm " << this->_name << " parameterized constructor called" << std::endl;
+	std::cout << "RobotomyRequestForm for " << this->_target << " parameterized constructor called" << std::endl;
 	return;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src)
 	: AForm("RobotomyRequestForm", 72, 45), _target(src.getTarget())
 {
-	std::cout << "RobotomyRequestForm " << this->_name << " copy constructor called" << std::endl;
+	std::cout << "RobotomyRequestForm for " << this->_target << " copy constructor called" << std::endl;
 	return;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(void)
 {
-	std::cout << "RobotomyRequestForm " << this->_name << " default destructor called" << std::endl;
+	std::cout << "RobotomyRequestForm for " << this->_target << " default destructor called" << std::endl;
 	return;
 }
 
@@ -60,7 +61,14 @@ void RobotomyRequestForm::signForm(const Bureaucrat &agent)
 		std::cout << "RobotomyRequestForm could not be executed: not signed" << std::endl;
 		return;
 	}
-	std::cout << "RobotomyRequestForm executed by " << agent.getName() << std::endl;
+	std::srand(std::time(0));
+	int flag = std::rand();
+	if (flag % 2 == 0)
+	{
+		std::cout << this->_target << " robotomized by " << agent.getName() << std::endl;
+		return;
+	}
+	std::cout << "Romotomization failed!" << std::endl;
 	return;
 }
 

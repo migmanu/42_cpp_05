@@ -2,6 +2,7 @@
 #define RobotomyRequestForm_HPP
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include <cstdlib>
 #include <string>
 
 class RobotomyRequestForm : public AForm
@@ -18,11 +19,10 @@ class RobotomyRequestForm : public AForm
 
 	// Public Member Functions
 	const std::string getTarget(void) const;
-	virtual void beSigned(const Bureaucrat &agent) = 0;
-	virtual void signForm(const Bureaucrat &agent) = 0;
-	//void execute(Bureaucrat const &executor);
+	virtual void beSigned(const Bureaucrat &agent);
 
   private:
+	virtual void signForm(const Bureaucrat &agent);
 	const std::string _target;
 };
 

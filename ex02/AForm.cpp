@@ -55,36 +55,20 @@ int AForm::getReqExecGrade(void) const
 	return this->_reqExecGrade;
 }
 
-void AForm::beSigned(const Bureaucrat &agent)
-{
-	if (agent.getGrade() > this->_reqSignGrade)
-	{
-		throw AForm::GradeTooLowException();
-	}
-	if (this->_signed == true)
-	{
-		std::cout << "AForm is already signed!" << std::endl;
-		return;
-	}
-	std::cout << "AForm signed by " << agent.getName() << std::endl;
-	this->_signed = true;
-	return;
-}
-
-void AForm::signForm(const Bureaucrat &agent)
+void AForm::execute(Bureaucrat const &agent)
 {
 	if (agent.getGrade() > this->_reqExecGrade)
 	{
-		std::cout << "AForm could not be executed: agent " << agent.getName() << " has no execution privileges"
-				  << std::endl;
+		std::cout << this->_name << " could not be executed: agent " << agent.getName()
+				  << " has no execution privileges" << std::endl;
 		return;
 	}
 	if (this->_signed == false)
 	{
-		std::cout << "AForm could not be executed: not signed" << std::endl;
+		std::cout << this->_name << " could not be executed: not signed" << std::endl;
 		return;
 	}
-	std::cout << "AForm executed by " << agent.getName() << std::endl;
+	this->signForm(agent);
 	return;
 }
 

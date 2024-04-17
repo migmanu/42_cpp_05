@@ -35,7 +35,7 @@ void RobotomyRequestForm::beSigned(const Bureaucrat &agent)
 {
 	if (agent.getGrade() > this->_reqSignGrade)
 	{
-		throw RobotomyRequestForm::GradeToLowException();
+		throw RobotomyRequestForm::GradeTooLowException();
 	}
 	if (this->_signed == true)
 	{

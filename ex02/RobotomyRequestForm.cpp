@@ -2,20 +2,25 @@
 #include <cstdlib>
 #include <ctime>
 
-RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", 72, 45), _target("No target")
+static int SignLevel = 72;
+static int ExecLevel = 45;
+
+RobotomyRequestForm::RobotomyRequestForm(void)
+	: AForm("RobotomyRequestForm", SignLevel, ExecLevel), _target("No target")
 {
 	std::cout << "RobotomyRequestForm default constructor called" << std::endl;
 	return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target)
+	: AForm("RobotomyRequestForm", SignLevel, ExecLevel), _target(target)
 {
 	std::cout << "RobotomyRequestForm for " << this->_target << " parameterized constructor called" << std::endl;
 	return;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src)
-	: AForm("RobotomyRequestForm", 72, 45), _target(src.getTarget())
+	: AForm("RobotomyRequestForm", SignLevel, ExecLevel), _target(src.getTarget())
 {
 	std::cout << "RobotomyRequestForm for " << this->_target << " copy constructor called" << std::endl;
 	return;

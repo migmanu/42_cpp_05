@@ -8,7 +8,7 @@
 int main(void)
 {
 	Bureaucrat manu("manu", 1);
-	RobotomyRequestForm formR(manu.getName());
+	RobotomyRequestForm formR("Marvin");
 	formR.beSigned(manu);
 	formR.execute(manu);
 	return 0;

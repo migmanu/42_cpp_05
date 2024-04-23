@@ -8,27 +8,30 @@ static int ExecLevel = 45;
 RobotomyRequestForm::RobotomyRequestForm(void)
 	: AForm("RobotomyRequestForm", SignLevel, ExecLevel), _target("No target")
 {
-	std::cout << "RobotomyRequestForm default constructor called" << std::endl;
+	std::cout << GREEN << "RobotomyRequestForm default constructor called" << RESET << std::endl;
 	return;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target)
 	: AForm("RobotomyRequestForm", SignLevel, ExecLevel), _target(target)
 {
-	std::cout << "RobotomyRequestForm for " << this->_target << " parameterized constructor called" << std::endl;
+	std::cout << GREEN << "RobotomyRequestForm for " << this->_target << " parameterized constructor called" << RESET
+			  << std::endl;
 	return;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src)
 	: AForm("RobotomyRequestForm", SignLevel, ExecLevel), _target(src.getTarget())
 {
-	std::cout << "RobotomyRequestForm for " << this->_target << " copy constructor called" << std::endl;
+	std::cout << GREEN << "RobotomyRequestForm for " << this->_target << " copy constructor called" << RESET
+			  << std::endl;
 	return;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(void)
 {
-	std::cout << "RobotomyRequestForm for " << this->_target << " default destructor called" << std::endl;
+	std::cout << RED << "RobotomyRequestForm for " << this->_target << " default destructor called" << RESET
+			  << std::endl;
 	return;
 }
 

@@ -43,27 +43,27 @@ void	writeTree(std::string name)
 ShrubberyCreationForm::ShrubberyCreationForm(void)
 	: AForm("ShrubberyCreationForm", SignLevel, ExecLevel), _target("No target")
 {
-	std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
+	std::cout << GREEN << "ShrubberyCreationForm default constructor called" << RESET << std::endl;
 	return;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 	: AForm("ShrubberyCreationForm", SignLevel, ExecLevel), _target(target)
 {
-	std::cout << "ShrubberyCreationForm for " << this->_target << " parameterized constructor called" << std::endl;
+	std::cout << GREEN << "ShrubberyCreationForm for " << this->_target << " parameterized constructor called" << RESET << std::endl;
 	return;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src)
 	: AForm("ShrubberyCreationForm", SignLevel, ExecLevel), _target(src.getTarget())
 {
-	std::cout << "ShrubberyCreationForm for " << this->_target << " copy constructor called" << std::endl;
+	std::cout << GREEN << "ShrubberyCreationForm for " << this->_target << " copy constructor called" << RESET << std::endl;
 	return;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void)
 {
-	std::cout << "ShrubberyCreationForm for " << this->_target << " default destructor called" << std::endl;
+	std::cout << RED << "ShrubberyCreationForm for " << this->_target << " default destructor called" << RESET << std::endl;
 	return;
 }
 

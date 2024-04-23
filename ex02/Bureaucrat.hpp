@@ -1,5 +1,6 @@
 #ifndef Bureaucrat_HPP
 #define Bureaucrat_HPP
+#include "colors.h"
 #include <exception>
 #include <iostream>
 #include <ostream>

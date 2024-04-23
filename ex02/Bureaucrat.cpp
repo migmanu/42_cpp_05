@@ -2,13 +2,13 @@
 
 Bureaucrat::Bureaucrat(void)
 {
-	std::cout << "Bureaucrat default constructor called" << std::endl;
+	std::cout << GREEN << "Bureaucrat default constructor called" << RESET << std::endl;
 	return;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	std::cout << "Bureaucrat " << this->_name << " parameterized constructor called" << std::endl;
+	std::cout << GREEN << "Bureaucrat " << this->_name << " parameterized constructor called" << RESET << std::endl;
 	if (grade < 1)
 	{
 		throw Bureaucrat::GradeToHighException();
@@ -23,13 +23,13 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src) : _name(src.getName()), _grade(src.getGrade())
 {
-	std::cout << "Bureaucrat " << this->_name << " copy constructor called" << std::endl;
+	std::cout << GREEN << "Bureaucrat " << this->_name << " copy constructor called" << RESET << std::endl;
 	return;
 }
 
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << "Bureaucrat " << this->_name << " default destructor called" << std::endl;
+	std::cout << RED << "Bureaucrat " << this->_name << " default destructor called" << RESET << std::endl;
 	return;
 }
 

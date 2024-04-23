@@ -2,6 +2,7 @@
 #define RobotomyRequestForm_HPP
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include "colors.h"
 #include <cstdlib>
 #include <string>
 

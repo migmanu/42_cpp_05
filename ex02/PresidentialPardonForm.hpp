@@ -2,6 +2,7 @@
 #define PresidentialPardonForm_HPP
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include "colors.h"
 #include <cstdlib>
 #include <string>
 
@@ -20,10 +21,9 @@ class PresidentialPardonForm : public AForm
 	// Public Member Functions
 	const std::string getTarget(void) const;
 	virtual void beSigned(const Bureaucrat &agent);
-	virtual void signForm(const Bureaucrat &agent);
-	//void execute(Bureaucrat const &executor);
 
   private:
+	virtual void signForm(const Bureaucrat &agent);
 	const std::string _target;
 };
 

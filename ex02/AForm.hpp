@@ -1,6 +1,7 @@
 #ifndef AForm_HPP
 #define AForm_HPP
 #include "Bureaucrat.hpp"
+#include "colors.h"
 #include <string>
 
 class AForm

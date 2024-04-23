@@ -12,6 +12,7 @@ $(OBJ_NAME) : $(OBJS)
 
 clean : 
 	@rm $(OBJ_NAME)
+	@rm *.txt
 
 re : clean $(OBJ_NAME)
 

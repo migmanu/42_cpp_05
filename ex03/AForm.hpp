@@ -16,6 +16,8 @@ class AForm
 	int getReqSignGrade(void) const;
 	int getReqExecGrade(void) const;
 	void execute(Bureaucrat const &agent) const;
+	virtual void beSigned(const Bureaucrat &agent) = 0;
+	virtual void signForm(const Bureaucrat &agent) const = 0;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -43,8 +45,6 @@ class AForm
 	};
 
   protected:
-	virtual void beSigned(const Bureaucrat &agent) = 0;
-	virtual void signForm(const Bureaucrat &agent) const = 0;
 	const std::string _name;
 	const int _reqSignGrade;
 	const int _reqExecGrade;

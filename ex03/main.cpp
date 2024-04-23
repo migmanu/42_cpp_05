@@ -1,7 +1,6 @@
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 #include "colors.h"
 #include <exception>
 #include <iostream>
@@ -12,15 +11,23 @@ int main(void)
 	try
 	{
 		Bureaucrat manu("manu", 5);
-		RobotomyRequestForm formR("Marvin");
-		ShrubberyCreationForm formS("42 Berlin");
-		PresidentialPardonForm formP("Zaphod Beeblebrox");
-		formP.beSigned(manu);
-		manu.executeForm(formP);
-		formS.beSigned(manu);
-		manu.executeForm(formS);
-		formR.beSigned(manu);
-		manu.executeForm(formR);
+		Intern intern;
+		AForm *formP = intern.makeForm("presidential pardon", "Zaphod Beeblebrox");
+		AForm *formS = intern.makeForm("shrubbery creation", "42 School");
+		AForm *formR = intern.makeForm("robotomy request", "Marvin");
+		AForm *formW = intern.makeForm("wrong request", "Marvin");
+
+		formP->beSigned(manu);
+		manu.executeForm(*formP);
+		formS->beSigned(manu);
+		manu.executeForm(*formS);
+		formR->beSigned(manu);
+		manu.executeForm(*formR);
+
+		delete formP;
+		delete formS;
+		delete formR;
+		delete formW;
 	}
 	catch (std::exception &exception)
 	{

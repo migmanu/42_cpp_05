@@ -1,5 +1,5 @@
 OBJS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp\
-	   RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+	   RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 
 CC = c++
 
@@ -12,6 +12,7 @@ $(OBJ_NAME) : $(OBJS)
 
 clean : 
 	@rm $(OBJ_NAME)
+	@rm *.txt
 
 re : clean $(OBJ_NAME)
 

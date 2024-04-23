@@ -1,9 +1,44 @@
 #include "ShrubberyCreationForm.hpp"
-#include <cstdlib>
-#include <ctime>
 
 static int SignLevel = 145;
 static int ExecLevel = 137;
+
+void	writeTree(std::string name)
+{
+	name = name + "ShrubberyForm.txt";
+	std::ofstream file;
+	file.open(name.c_str());
+	file << "                                                         ." << std::endl;
+	file << "                                              .         ;  " << std::endl;
+	file << "                                              .         ;  " << std::endl;
+	file << "                   ,           ,                :;%  %;   " << std::endl;
+	file << "                    :         ;                   :;%;'     .,   " << std::endl;
+	file << "           ,.        %;     %;            ;        %;'    ,;" << std::endl;
+	file << "             ;       ;%;  %%;        ,     %;    ;%;    ,%'" << std::endl;
+	file << "              %;       %;%;      ,  ;       %;  ;%;   ,%;' " << std::endl;
+	file << "               ;%;      %;        ;%;        % ;%;  ,%;'" << std::endl;
+	file << "               ;%;      %;        ;%;        % ;%;  ,%;'" << std::endl;
+	file << "                 `:;%.    ;%%. %@;        %; ;@%;%'" << std::endl;
+	file << "                    `:%;.  :;bd%;          %;@%;'" << std::endl;
+	file << "                      `@%:.  :;%.         ;@@%;'   " << std::endl;
+	file << "                        `@%.  `;@%.      ;@@%;         " << std::endl;
+	file << "                          `@%%. `@%%    ;@@%;        " << std::endl;
+	file << "                            ;@%. :@%%  %@@%;       " << std::endl;
+	file << "                              %@bd%%%bd%%:;     " << std::endl;
+	file << "                                #@%%%%%:;;" << std::endl;
+	file << "                                %@@%%%::;" << std::endl;
+	file << "                                %@@@%(o);  . '         " << std::endl;
+	file << "                                %@@@o%;:(.,'         " << std::endl;
+	file << "                            `.. %@@@o%::;         " << std::endl;
+	file << "                               `)@@@o%::;         " << std::endl;
+	file << "                                %@@(o)::;        " << std::endl;
+	file << "                               .%@@@@%::;         " << std::endl;
+	file << "                               ;%@@@@%::;.          " << std::endl;
+	file << "                              ;%@@@@%%:;;;. " << std::endl;
+	file << "                          ...;%@@@@@%%:;;;;,..    Gilo97" << std::endl;
+
+	file.close();
+}
 
 ShrubberyCreationForm::ShrubberyCreationForm(void)
 	: AForm("ShrubberyCreationForm", SignLevel, ExecLevel), _target("No target")
@@ -66,7 +101,7 @@ void ShrubberyCreationForm::signForm(const Bureaucrat &agent)
 		std::cout << "ShrubberyCreationForm could not be executed: not signed" << std::endl;
 		return;
 	}
-	// TODO: open and write to file
+	writeTree(this->getTarget());
 	return;
 }
 

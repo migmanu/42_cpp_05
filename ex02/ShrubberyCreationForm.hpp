@@ -3,6 +3,7 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 #include <cstdlib>
+#include <ctime>
 #include <string>
 #include <fstream>
 

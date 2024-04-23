@@ -29,6 +29,15 @@ Form::Form(const Form &src)
 	return;
 }
 
+Form &Form::operator=(const Form &rhs)
+{
+	if (this == &rhs)
+		return (*this);
+	std::cout << "Form Assignment Operator called" << std::endl;
+	this->_signed = rhs.getSigned();
+	return (*this);
+}
+
 Form::~Form(void)
 {
 	std::cout << "Form " << this->_name << " default destructor called" << std::endl;

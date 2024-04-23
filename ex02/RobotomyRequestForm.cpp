@@ -28,6 +28,14 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src)
 	return;
 }
 
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs)
+{
+	if (this == &rhs)
+		return (*this);
+	std::cout << "RobotomyRequestForm Assignment Operator called." << std::endl;
+	return (*this);
+}
+
 RobotomyRequestForm::~RobotomyRequestForm(void)
 {
 	std::cout << RED << "RobotomyRequestForm for " << this->_target << " default destructor called" << RESET

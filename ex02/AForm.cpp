@@ -30,6 +30,15 @@ AForm::AForm(const AForm &src)
 	return;
 }
 
+AForm &AForm::operator=(const AForm &rhs)
+{
+	if (this == &rhs)
+		return (*this);
+	std::cout << "AForm Assignment Operator called" << std::endl;
+	this->_signed = rhs.getSigned();
+	return (*this);
+}
+
 AForm::~AForm(void)
 {
 	std::cout << RED << "AForm " << this->_name << " default destructor called" << RESET << std::endl;

@@ -9,20 +9,16 @@
 class PresidentialPardonForm : public AForm
 {
   public:
-	// Constructors and Destructors
 	PresidentialPardonForm(void);
 	PresidentialPardonForm(const PresidentialPardonForm &src);
 	PresidentialPardonForm(std::string target);
 	virtual ~PresidentialPardonForm(void);
 
-	// Overloaded Operators
-	PresidentialPardonForm &operator=(const PresidentialPardonForm &rhs);
-
-	// Public Member Functions
 	const std::string getTarget(void) const;
 	virtual void beSigned(const Bureaucrat &agent);
 
   private:
+	PresidentialPardonForm &operator=(const PresidentialPardonForm &rhs);
 	virtual void signForm(const Bureaucrat &agent) const;
 	const std::string _target;
 };
@@ -30,4 +26,3 @@ class PresidentialPardonForm : public AForm
 std::ostream &operator<<(std::ostream &o, const PresidentialPardonForm &rhs);
 
 #endif // !PresidentialPardonForm_HPP
-

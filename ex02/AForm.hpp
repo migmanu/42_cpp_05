@@ -11,8 +11,6 @@ class AForm
 	AForm(std::string name, int signGrade, int execGrade);
 	virtual ~AForm(void);
 
-	AForm &operator=(const AForm &rhs);
-
 	const std::string &getName(void) const;
 	bool getSigned(void) const;
 	int getReqSignGrade(void) const;
@@ -51,6 +49,9 @@ class AForm
 	const int _reqSignGrade;
 	const int _reqExecGrade;
 	bool _signed;
+
+  private:
+	AForm &operator=(const AForm &rhs);
 };
 
 std::ostream &operator<<(std::ostream &o, const Bureaucrat &rhs);

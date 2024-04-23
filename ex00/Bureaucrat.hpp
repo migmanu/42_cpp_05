@@ -8,21 +8,15 @@
 class Bureaucrat
 {
   public:
-	// Constructors and Destructors
 	Bureaucrat(std::string name, int grade);
 	Bureaucrat(const Bureaucrat &src);
 	~Bureaucrat(void);
 
-	// Overloaded Operators
-	Bureaucrat &operator=(const Bureaucrat &rhs);
-
-	// Public member functions
 	const std::string &getName(void) const;
 	int getGrade(void) const;
 	void incrementGrade(void);
 	void decrementGrade(void);
 
-	// Exception classes
 	class GradeToHighException : public std::exception
 	{
 	  public:
@@ -41,6 +35,7 @@ class Bureaucrat
 	};
 
   private:
+	Bureaucrat &operator=(const Bureaucrat &rhs);
 	Bureaucrat(void);
 	const std::string _name;
 	int _grade;

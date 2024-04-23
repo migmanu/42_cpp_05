@@ -11,20 +11,16 @@
 class ShrubberyCreationForm : public AForm
 {
   public:
-	// Constructors and Destructors
 	ShrubberyCreationForm(void);
 	ShrubberyCreationForm(const ShrubberyCreationForm &src);
 	ShrubberyCreationForm(std::string target);
 	virtual ~ShrubberyCreationForm(void);
 
-	// Overloaded Operators
-	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &rhs);
-
-	// Public Member Functions
 	const std::string getTarget(void) const;
 	virtual void beSigned(const Bureaucrat &agent);
 
   private:
+	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &rhs);
 	virtual void signForm(const Bureaucrat &agent) const;
 	const std::string _target;
 };

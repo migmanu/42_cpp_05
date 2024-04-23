@@ -11,16 +11,16 @@ int main(void)
 {
 	try
 	{
-		Bureaucrat manu("manu", 6);
+		Bureaucrat manu("manu", 5);
 		RobotomyRequestForm formR("Marvin");
 		ShrubberyCreationForm formS("42 Berlin");
-		PresidentialPardonForm formP("President Zaphod Beeblebrox");
+		PresidentialPardonForm formP("Zaphod Beeblebrox");
 		formP.beSigned(manu);
 		manu.executeForm(formP);
-		// formS.beSigned(manu);
-		// manu.executeForm(formS);
-		// formR.beSigned(manu);
-		// manu.executeForm(formR);
+		formS.beSigned(manu);
+		manu.executeForm(formS);
+		formR.beSigned(manu);
+		manu.executeForm(formR);
 	}
 	catch (std::exception &exception)
 	{

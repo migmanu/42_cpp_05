@@ -70,14 +70,7 @@ void PresidentialPardonForm::signForm(const Bureaucrat &agent) const
 		std::cout << "PresidentialPardonForm could not be executed: not signed" << std::endl;
 		return;
 	}
-	std::srand(std::time(0));
-	int flag = std::rand();
-	if (flag % 2 == 0)
-	{
-		std::cout << this->_target << " robotomized by " << agent.getName() << std::endl;
-		return;
-	}
-	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox!" << std::endl;
+	std::cout << this->getTarget() << " has been pardoned by " << agent.getName() << "!" << std::endl;
 	return;
 }
 

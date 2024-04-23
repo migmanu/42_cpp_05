@@ -3,7 +3,7 @@
 static int SignLevel = 145;
 static int ExecLevel = 137;
 
-void	writeTree(std::string name)
+void writeTree(std::string name)
 {
 	name = name + "ShrubberyForm.txt";
 	std::ofstream file;
@@ -50,20 +50,23 @@ ShrubberyCreationForm::ShrubberyCreationForm(void)
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 	: AForm("ShrubberyCreationForm", SignLevel, ExecLevel), _target(target)
 {
-	std::cout << GREEN << "ShrubberyCreationForm for " << this->_target << " parameterized constructor called" << RESET << std::endl;
+	std::cout << GREEN << "ShrubberyCreationForm for " << this->_target << " parameterized constructor called" << RESET
+			  << std::endl;
 	return;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src)
 	: AForm("ShrubberyCreationForm", SignLevel, ExecLevel), _target(src.getTarget())
 {
-	std::cout << GREEN << "ShrubberyCreationForm for " << this->_target << " copy constructor called" << RESET << std::endl;
+	std::cout << GREEN << "ShrubberyCreationForm for " << this->_target << " copy constructor called" << RESET
+			  << std::endl;
 	return;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void)
 {
-	std::cout << RED << "ShrubberyCreationForm for " << this->_target << " default destructor called" << RESET << std::endl;
+	std::cout << RED << "ShrubberyCreationForm for " << this->_target << " default destructor called" << RESET
+			  << std::endl;
 	return;
 }
 
@@ -76,6 +79,7 @@ void ShrubberyCreationForm::beSigned(const Bureaucrat &agent)
 {
 	if (agent.getGrade() > this->_reqSignGrade)
 	{
+		std::cout << this->getName() << " target: " << this->getTarget() << " throws exception" << std::endl;
 		throw ShrubberyCreationForm::GradeTooLowException();
 	}
 	if (this->_signed == true)
@@ -88,7 +92,7 @@ void ShrubberyCreationForm::beSigned(const Bureaucrat &agent)
 	return;
 }
 
-void ShrubberyCreationForm::signForm(const Bureaucrat &agent)
+void ShrubberyCreationForm::signForm(const Bureaucrat &agent) const
 {
 	if (agent.getGrade() > this->_reqExecGrade)
 	{

@@ -5,8 +5,8 @@
 #include "colors.h"
 #include <cstdlib>
 #include <ctime>
-#include <string>
 #include <fstream>
+#include <string>
 
 class ShrubberyCreationForm : public AForm
 {
@@ -25,11 +25,10 @@ class ShrubberyCreationForm : public AForm
 	virtual void beSigned(const Bureaucrat &agent);
 
   private:
-	virtual void signForm(const Bureaucrat &agent);
+	virtual void signForm(const Bureaucrat &agent) const;
 	const std::string _target;
 };
 
 std::ostream &operator<<(std::ostream &o, const ShrubberyCreationForm &rhs);
 
 #endif // !ShrubberyCreationForm_HPP
-

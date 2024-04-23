@@ -44,6 +44,7 @@ void PresidentialPardonForm::beSigned(const Bureaucrat &agent)
 {
 	if (agent.getGrade() > this->_reqSignGrade)
 	{
+		std::cout << this->getName() << " target: " << this->getTarget() << " throws exception" << std::endl;
 		throw PresidentialPardonForm::GradeTooLowException();
 	}
 	if (this->_signed == true)
@@ -56,7 +57,7 @@ void PresidentialPardonForm::beSigned(const Bureaucrat &agent)
 	return;
 }
 
-void PresidentialPardonForm::signForm(const Bureaucrat &agent)
+void PresidentialPardonForm::signForm(const Bureaucrat &agent) const
 {
 	if (agent.getGrade() > this->_reqExecGrade)
 	{

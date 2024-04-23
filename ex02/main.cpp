@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "colors.h"
@@ -11,19 +11,20 @@ int main(void)
 {
 	try
 	{
-		std::cout << BGREEN << "* CONSTRUCTORS *" << RESET << std::endl;
-		Bureaucrat manu("manu", 145);
+		Bureaucrat manu("manu", 6);
 		RobotomyRequestForm formR("Marvin");
 		ShrubberyCreationForm formS("42 Berlin");
-		std::cout << std::endl << "* PROGRAM *" << std::endl;
-		formS.beSigned(manu);
-		// formS.execute(manu);
-		formR.beSigned(manu);
-		formR.execute(manu);
+		PresidentialPardonForm formP("President Zaphod Beeblebrox");
+		formP.beSigned(manu);
+		manu.executeForm(formP);
+		// formS.beSigned(manu);
+		// manu.executeForm(formS);
+		// formR.beSigned(manu);
+		// manu.executeForm(formR);
 	}
 	catch (std::exception &exception)
 	{
-		std::cerr << std::endl << "* Exception caught: " << exception.what() << " *" << std::endl;
+		std::cerr << std::endl << BGRAY << "* Exception caught: " << exception.what() << " *" << std::endl << RESET;
 	}
 	return 0;
 }

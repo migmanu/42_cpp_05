@@ -23,7 +23,7 @@ class RobotomyRequestForm : public AForm
 	virtual void beSigned(const Bureaucrat &agent);
 
   private:
-	virtual void signForm(const Bureaucrat &agent);
+	virtual void signForm(const Bureaucrat &agent) const;
 	const std::string _target;
 };
 

@@ -63,6 +63,14 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src)
 	return;
 }
 
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs)
+{
+	if (this == &rhs)
+		return (*this);
+	std::cout << "ShrubberyCreationForm Assignment Operator called." << std::endl;
+	return (*this);
+}
+
 ShrubberyCreationForm::~ShrubberyCreationForm(void)
 {
 	std::cout << RED << "ShrubberyCreationForm for " << this->_target << " default destructor called" << RESET

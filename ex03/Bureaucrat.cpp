@@ -28,6 +28,15 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src) : _name(src.getName()), _grade(src
 	return;
 }
 
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
+{
+	if (this == &rhs)
+		return (*this);
+	std::cout << "Bureaucrat Assignment Operator called" << std::endl;
+	this->_grade = rhs.getGrade();
+	return (*this);
+}
+
 Bureaucrat::~Bureaucrat(void)
 {
 	std::cout << RED << "Bureaucrat " << this->_name << " default destructor called" << RESET << std::endl;

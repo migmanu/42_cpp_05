@@ -9,20 +9,16 @@
 class RobotomyRequestForm : public AForm
 {
   public:
-	// Constructors and Destructors
 	RobotomyRequestForm(void);
 	RobotomyRequestForm(const RobotomyRequestForm &src);
 	RobotomyRequestForm(std::string target);
 	virtual ~RobotomyRequestForm(void);
 
-	// Overloaded Operators
-	RobotomyRequestForm &operator=(const RobotomyRequestForm &rhs);
-
-	// Public Member Functions
 	const std::string getTarget(void) const;
 	virtual void beSigned(const Bureaucrat &agent);
 
   private:
+	RobotomyRequestForm &operator=(const RobotomyRequestForm &rhs);
 	virtual void signForm(const Bureaucrat &agent) const;
 	const std::string _target;
 };

@@ -28,6 +28,14 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src
 	return;
 }
 
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &rhs)
+{
+	if (this == &rhs)
+		return (*this);
+	std::cout << "PresidentialPardonForm Assignment Operator called." << std::endl;
+	return (*this);
+}
+
 PresidentialPardonForm::~PresidentialPardonForm(void)
 {
 	std::cout << RED << "PresidentialPardonForm for " << this->_target << " default destructor called" << RESET

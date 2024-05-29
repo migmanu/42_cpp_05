@@ -5,6 +5,7 @@
 #include "PresidentialPardonForm.hpp"
 #include <iostream>
 #include <ostream>
+#include <stdexcept>
 
 static std::string names[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 
@@ -70,8 +71,8 @@ AForm *Intern::makeForm(std::string name, std::string target)
 		}
 		default:
 		{
-			std::cout << "Form does not exist!" << std::endl;
-			return NULL;
+			std::string msg = "Form \"" + name + "\" does not exist!";
+			throw std::invalid_argument(msg);
 		}
 	}
 	return newForm;

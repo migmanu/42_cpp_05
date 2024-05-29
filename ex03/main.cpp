@@ -15,7 +15,8 @@ int main(void)
 		AForm *formP = intern.makeForm("presidential pardon", "Zaphod Beeblebrox");
 		AForm *formS = intern.makeForm("shrubbery creation", "42 School");
 		AForm *formR = intern.makeForm("robotomy request", "Marvin");
-		AForm *formW = intern.makeForm("wrong request", "Marvin");
+		// AForm *formW = intern.makeForm("wrong request", "Marvin");
+		// delete formW;
 
 		formP->beSigned(manu);
 		manu.executeForm(*formP);
@@ -27,7 +28,6 @@ int main(void)
 		delete formP;
 		delete formS;
 		delete formR;
-		delete formW;
 	}
 	catch (std::exception &exception)
 	{

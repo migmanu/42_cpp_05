@@ -11,7 +11,6 @@
 class ShrubberyCreationForm : public AForm
 {
   public:
-	ShrubberyCreationForm(void);
 	ShrubberyCreationForm(const ShrubberyCreationForm &src);
 	ShrubberyCreationForm(std::string target);
 	virtual ~ShrubberyCreationForm(void);
@@ -20,6 +19,7 @@ class ShrubberyCreationForm : public AForm
 	virtual void beSigned(const Bureaucrat &agent);
 
   private:
+	ShrubberyCreationForm(void);
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &rhs);
 	virtual void signForm(const Bureaucrat &agent) const;
 	const std::string _target;

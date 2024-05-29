@@ -9,7 +9,6 @@
 class RobotomyRequestForm : public AForm
 {
   public:
-	RobotomyRequestForm(void);
 	RobotomyRequestForm(const RobotomyRequestForm &src);
 	RobotomyRequestForm(std::string target);
 	virtual ~RobotomyRequestForm(void);
@@ -18,6 +17,7 @@ class RobotomyRequestForm : public AForm
 	virtual void beSigned(const Bureaucrat &agent);
 
   private:
+	RobotomyRequestForm(void);
 	RobotomyRequestForm &operator=(const RobotomyRequestForm &rhs);
 	virtual void signForm(const Bureaucrat &agent) const;
 	const std::string _target;

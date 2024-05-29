@@ -20,6 +20,8 @@ int main(void)
 			std::cout << unam;
 			unam.decrementGrade();
 		}
+		// Bureaucrat tooHigh("crazy", 0);
+		// Bureaucrat tooLow("crazy", 151);
 	}
 	catch (std::exception &exception)
 	{
